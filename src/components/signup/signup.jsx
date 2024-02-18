@@ -60,7 +60,7 @@ export default function RegisterComponent() {
     }
 
     if (isSuccess || user) {
-      navigate("/dashboard");
+      navigate("/home");
     }
 
     dispatch(reset());
