@@ -1,7 +1,10 @@
 import React from "react"
 import "./style.css"
 import { Col, Container, Row } from "react-bootstrap"
-
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Divider, Grid } from "@mui/material";
 const Footer = () => {
   return (
     <footer>
@@ -12,26 +15,24 @@ const Footer = () => {
                   <ion-icon name="bag"></ion-icon>
                   <h1>WA Commerce</h1>
               </div>
-              <p>Wa commerce est une entreprise de commerce electronique</p>
+              <p>Wa commerce Company : Shopping online</p>
             </Col>
             <Col md={3} sm={5} className='box'>
-              <h2>About Us</h2>
+              <h2>Links</h2>
               <ul>
-                <li>Careers</li>
-                <li>Our Stores</li>
-                <li>Our Cares</li>
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
+                <li>Home</li>
+                <li>Shop</li>
+                <li>Cart</li>
+               
               </ul>
             </Col>
             <Col md={3} sm={5} className='box'>
-              <h2>Customer Care</h2>
+            <h2>Get in touch</h2>
               <ul>
-                <li>Help Center </li>
-                <li>How to Buy </li>
-                <li>Track Your Order </li>
-                <li>Corporate & Bulk Purchasing </li>
-                <li>Returns & Refunds </li>
+                <li><FacebookIcon/> Facebook </li>
+                <li><InstagramIcon/> Instagram </li>
+                <li><LinkedInIcon/> LinkedIn </li>
+               
               </ul>
             </Col>
             <Col md={3} sm={5} className='box'>
@@ -43,6 +44,19 @@ const Footer = () => {
               </ul>
             </Col>
           </Row>
+          <Grid
+  container
+
+  direction="column"
+  alignItems="center"
+  justifyContent="center"
+  sx={{ marginTop: '10vh' }}
+>
+<Divider >
+&copy; <span>{`${new Date().getFullYear()} Wa-commerce, `}</span>All rights reserved.
+  
+</Divider>
+          </Grid>
         </Container>
     </footer>
   )

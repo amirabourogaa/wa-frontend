@@ -7,6 +7,7 @@ import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 import { getAllProducts } from "../services/productService";
 import { DarkModeContext } from "../contexte";
 import NavBar from "../components/Navbar/Navbar";
+import Appbar from './../components/Appbar';
 
 const Home = () => {
   const [darkMode,setDarkMode]=useContext(DarkModeContext)
@@ -36,7 +37,8 @@ const Home = () => {
 
   return (
     <Fragment>
-      <NavBar />
+   
+      <Appbar/>
           <SliderHome />
           <Wrapper />
           <Section

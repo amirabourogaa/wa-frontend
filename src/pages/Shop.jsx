@@ -9,7 +9,7 @@ import { getAllProducts } from "../services/productService";
 import AddProduct from "../components/modals/addProduct.jsx";
 import { useSelector } from "react-redux";
 import { DarkModeContext } from "../contexte/index.jsx";
-import NavBar from "../components/Navbar/Navbar.jsx";
+import Appbar from './../components/Appbar';
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
@@ -31,7 +31,7 @@ const Shop = () => {
 
   return (
     <Fragment>
-      <NavBar />
+      <Appbar />
       <Banner title="Products" />
       <section
         style={{
@@ -43,7 +43,7 @@ const Shop = () => {
         <Container className="filter-bar-contianer">
           <Row className="justify-content-center">
             <Col md={4}>
-              <FilterSelect setFilterList={setFilterList} products={products} />
+              <FilterSelect  setFilterList={setFilterList} products={products} />
             </Col>
             <Col md={4}>
               <SearchBar setFilterList={setFilterList} />

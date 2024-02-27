@@ -32,7 +32,7 @@ const FilterSelect = ({ setFilterList, products }) => {
   const customStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: darkMode ? "#1e1e1e" : "#fff",
+      backgroundColor: darkMode ? '#0f3460' : '#fff',
       color: darkMode ? "#fff" : "#000",
       borderRadius: "5px",
       border: "none",
@@ -42,7 +42,7 @@ const FilterSelect = ({ setFilterList, products }) => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected ? (darkMode ? "#3a3a3a" : "#0f3460") : "black",
+      backgroundColor: state.isSelected ? (darkMode ? "#3a3a3a" : "#0f3460") : "#0f3460",
       color: state.isSelected ? (darkMode ? "#fff" : "black") : (darkMode ? "#fff" : "white"),
       "&:hover": {
         backgroundColor: darkMode ? "#3a3a3a" : "#3a3a3a",

@@ -3,6 +3,7 @@ import { TextField, Modal, Button, Box, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addProduct } from "../../services/productService.js";
+import { DarkModeContext } from "../../contexte/index.jsx";
 
 const style = {
   position: "absolute",
@@ -28,6 +29,7 @@ const AddProduct = () => {
   const [imgUrl, setimgUrl] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = React.useContext(DarkModeContext)
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -71,7 +73,7 @@ const AddProduct = () => {
         color="info"
         variant="contained"
         onClick={handleOpen}
-        style={{ marginLeft: "50px" }}
+        style={{ marginLeft: "50px",backgroundColor:darkMode ? '#0f3460' : '#fff',color:darkMode ? '#fff' : 'black' }}
       >
         Add product
       </Button>

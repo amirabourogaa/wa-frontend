@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper'
 import NavBar from '../components/Navbar/Navbar'
 import { Button, Chip, Container, Divider } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
+import Appbar from './../components/Appbar';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -57,7 +58,7 @@ const UsersList = () => {
   }, [])
   return (
     <>
-      <NavBar />
+      <Appbar />
       <Container maxWidth='xl'>
         <TableContainer component={Paper}>
           <Table

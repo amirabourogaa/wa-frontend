@@ -9,7 +9,7 @@ import {
 import axios from "axios";
 import { Button } from "@mui/material";
 import { DarkModeContext } from "../contexte";
-import NavBar from "../components/Navbar/Navbar";
+import Appbar from './../components/Appbar';
 
 const Cart = () => {
   const { cartList } = useSelector((state) => state.cart);
@@ -51,7 +51,7 @@ const Cart = () => {
 
   return (
     <>
-      <NavBar />
+      <Appbar />
 
     <section
       style={{
