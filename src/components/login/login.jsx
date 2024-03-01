@@ -17,8 +17,7 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { DarkModeContext } from "../../contexte/index.jsx";
-import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
+
 
 function Copyright(props) {
   return (
