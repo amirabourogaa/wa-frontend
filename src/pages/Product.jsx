@@ -8,7 +8,7 @@ import ProductReviews from "../components/ProductReviews/ProductReviews";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 import { getAllProducts } from "../services/productService";
 import { DarkModeContext } from "../contexte";
-import NavBar from "../components/Navbar/Navbar";
+import Appbar from "../components/Appbar";
 
 const Product = () => {
   const { id } = useParams();
@@ -44,7 +44,7 @@ const Product = () => {
 
   return (
     <Fragment>
-      <NavBar />
+      <Appbar />
       {products.length > 0 && (
         <>
           <Banner title={selectedProduct?.productName} />
