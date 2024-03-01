@@ -306,7 +306,7 @@ export default function Appbar () {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{backgroundColor:darkMode ? "#0f3460" : '#fff' }} position='fixed'>
+      <AppBar style={{backgroundColor:darkMode ? "#0f3460" : '#fff' }} >
         <Toolbar>
           <Typography
             variant='h6'
