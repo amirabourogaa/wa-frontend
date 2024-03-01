@@ -128,7 +128,7 @@ export default function Appbar () {
       
     >
       <MenuItem style={{backgroundColor:darkMode ? '#0f3460' : '#fff'}} >
-      <Link aria-label='Go to Shop Page' className='navbar-link' to='/shop'>
+      <Link aria-label='Go to Shop Page' className='navbar-link' to='/'>
       <IconButton size='large' aria-label='show 4 new mails' color='inherit'>
           <CottageIcon style={{color:darkMode ? "#fff" : '#0f3460'}} />
         </IconButton>
@@ -202,7 +202,7 @@ export default function Appbar () {
       <Link aria-label='Go to Shop Page' className='navbar-link' to='/cart'>
       <IconButton
           size='large'
-          aria-label='show 17 new notifications'
+         
           color='inherit'
         >
           <Badge badgeContent={17} color='error'>
@@ -219,25 +219,88 @@ export default function Appbar () {
       </MenuItem>
     
       <MenuItem onClick={handleProfileMenuOpen} style={{backgroundColor:darkMode ? '#0f3460' : '#fff'}}>
-      <Link aria-label='Go to Shop Page' className='navbar-link' to='/cart'>
-       
-        <IconButton
-          size='large'
-          aria-label='account of current user'
-          aria-controls='primary-search-account-menu'
-          aria-haspopup='true'
-          color='inherit'
-        >
-          <AccountCircle style={{color:darkMode ? "#fff" : '#0f3460'}} />
-        </IconButton>
-        <span
+      {connectedUser ? (
+          <Link
+          style={linkStyle}
+            aria-label='Logout'
+            className='navbar-link'
+            to='/'
+            onClick={() => dispatch(logout())}
+          >
+            <IconButton
+              title={`Connected As: ${connectedUser.user.name}`}
+              size='large'
+              color='inherit'
+            >
+              <LogoutIcon style={{color:darkMode ? "#fff" : '#0f3460'}} />
+              <span
             style={{color:darkMode ? "#fff" : '#0f3460'}}
             className='nav-link-label'
           >
-            Profile
+            Logout
           </span>
-      </Link>
+            </IconButton>
+          </Link>
+        ) : (
+          <Link
+            style={linkStyle}
+            aria-label='Login'
+            to='/login'
+            className='login'
+          >
+         <IconButton
+              title='Login'
+              size='large'
+              color='inherit'
+            >
+              <AccountCircle style={{color:darkMode ? "#fff" : '#0f3460'}} />  
+              <span
+            style={{color:darkMode ? "#fff" : '#0f3460'}}
+            className='nav-link-label'
+          >
+            Login
+          </span>
+            </IconButton>
+          </Link>
+        )}
+       
       </MenuItem>
+      <MenuItem style={{backgroundColor:darkMode ? '#0f3460' : '#fff'}}>
+
+      <IconButton
+              size='large'
+             
+              
+              onClick={() => setDarkMode(!darkMode)}
+              color='inherit'
+            >
+              {
+                darkMode ? (
+                  <i>
+                  <LuSun color='white' />  
+                    <span
+            style={{color:darkMode ? "#fff" : '#0f3460'}}
+            className='nav-link-label'
+          >
+            Dark
+          </span>
+                </i>
+                )
+                
+                :(
+                  <i>
+                  <IoMoon color='black' />   
+                  <span
+            style={{color:darkMode ? "#fff" : '#0f3460'}}
+            className='nav-link-label'
+          >
+            Light
+          </span>
+                </i>
+                )
+              }
+            </IconButton>
+            </MenuItem>
     </Menu>
   )
 
@@ -365,14 +428,14 @@ export default function Appbar () {
          <IconButton
               title='Login'
               size='large'
-              edge='end'
+              edge='start'
               aria-label='account of current user'
               aria-controls={menuId}
               aria-haspopup='true'
               onClick={handleProfileMenuOpen}
               color='inherit'
             >
-              <AccountCircle style={{color:darkMode ? "#fff" : '#0f3460'}} />
+              <AccountCircle style={{color:darkMode ? "#fff" : '#0f3460', marginTop:'50%'}} />
             </IconButton>
           </Link>
         )}

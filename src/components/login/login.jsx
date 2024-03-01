@@ -17,6 +17,8 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { DarkModeContext } from "../../contexte/index.jsx";
+import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 function Copyright(props) {
   return (
@@ -40,7 +42,17 @@ export default function Authentification() {
     email: "",
     password: "",
   });
+  const responseGoogle = (response) => {
+    console.log(response);
+    // Send the response.accessToken to your backend
+    // for authentication and user session creation
+  }
 
+  const responseFacebook = (response) => {
+    console.log(response);
+    // Send the response.accessToken to your backend
+    // for authentication and user session creation
+  }
   const { email, password } = formData;
   const [darkMode, setDarkMode] = useContext(DarkModeContext);
   const navigate = useNavigate();
@@ -177,6 +189,9 @@ margin:'3%'
               >
                 SignIn
               </Button>
+             
+         
+     
               <Copyright
                 style={{
                   color: darkMode ? "#000" : "#fff",
@@ -185,8 +200,28 @@ margin:'3%'
                 sx={{ mt: 5 }}
               />
             </Box>
+            {/* <Box sx={{ mt: 1 }}>
+            <GoogleLogin
+             style= {{width:'100%'}}
+        clientId="YOUR_CLIENT_ID"
+        buttonText="Login with Google"
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+        cookiePolicy={'single_host_origin'}
+      />
+            </Box>
+            <Box sx={{ mt: 1 }}>
+            <FacebookLogin
+        appId="YOUR_APP_ID"
+        autoLoad={false}
+        fields="name,email,picture"
+        callback={responseFacebook}
+      />
+            </Box> */}
+          
           </Box>
         </Grid>
+        
       </Grid>
     </ThemeProvider>
   );
