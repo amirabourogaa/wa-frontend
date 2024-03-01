@@ -86,7 +86,7 @@ const Cart = () => {
                 <Row>
                   <Col className="image-holder" sm={4} md={3}>
                     <img
-                      src={`http://localhost:4000/uploads/${item.imgUrl}`}
+                      src={`https://wa-backend-ivjj.onrender.com/uploads/${item.imgUrl}`}
                       alt=""
                     />
                   </Col>
