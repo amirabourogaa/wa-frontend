@@ -49,7 +49,7 @@ const UsersList = () => {
   return (
     <>
       <Appbar />
-      <Container sx={{marginTop:"20%"}} maxWidth='xl'>
+      <Container sx={{marginTop:"20%",marginBottom:"20%"}} maxWidth='xl'>
         <Box >
         <TableContainer component={Paper}>
           <Table
